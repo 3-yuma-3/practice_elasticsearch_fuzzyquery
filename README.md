@@ -10,6 +10,12 @@
   - [elasticsearchのコンテナが137エラーで立ち上がらない (2020/08/03)](https://qiita.com/tayu1605/items/8da408c75251b30a51da)
     - 200mにして対処
 
+- APIの叩き方
+  - `$ docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt .`
+  - `$ sudo curl --cacert http_ca.crt -u elastic https://localhost:9200/_cat/indices?v`
+- csvインポート時に緯度経度を `geo_point` として認識させるには、`Geo point field = coordinates` にする
+  - <img src="./import_csv_field_coordinates.png" width=300>
+
 ## kibana
 
 - `lcoalhost:56001`
